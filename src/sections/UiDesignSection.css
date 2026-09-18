@@ -66,6 +66,7 @@
 
 .ui-design__color-card {
   flex: 1;
+  min-width: 0;
   aspect-ratio: 3 / 4;
   border-radius: 12px;
   padding: 16px;
@@ -73,6 +74,20 @@
 
   display: flex;
   align-items: flex-end;
+}
+
+.ui-design__color-card__hex {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 420px) {
+  .ui-design__color-card {
+    padding: 10px;
+  }
+
+  .ui-design__color-card__hex {
+    font-size: 12px;
+  }
 }
 
 .ui-design__color-card--bordered {

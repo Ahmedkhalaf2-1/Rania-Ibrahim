@@ -373,6 +373,29 @@
   .stationery-applications {
     flex-wrap: wrap;
   }
+
+  /* Palette no longer shares a row with the pattern block once stacked —
+     height:100% would collapse the cards against an auto-sized row. */
+  .stationery-cell-palette {
+    height: auto;
+  }
+
+  .stationery-palette__grid {
+    height: auto;
+  }
+
+  .stationery-color-card {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Per-item nudges were tuned for the single-row desktop layout; reset
+     them so wrapped rows on mobile don't overlap. */
+  .stationery-application-frame:nth-child(2),
+  .stationery-application-frame:nth-child(3),
+  .stationery-application-frame:last-child {
+    transform: none;
+  }
 }
 
 @media (max-width: 600px) {

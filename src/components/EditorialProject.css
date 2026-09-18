@@ -32,5 +32,12 @@
 
 .editorial-project__split-media {
   aspect-ratio: 4 / 3;
-  transform: translateY(-140px);
+}
+
+/* The upward nudge only makes sense once the two columns sit side-by-side;
+   below 900px they stack, so it would drag the photo into the text above. */
+@media (min-width: 901px) {
+  .editorial-project__split-media {
+    transform: translateY(-140px);
+  }
 }

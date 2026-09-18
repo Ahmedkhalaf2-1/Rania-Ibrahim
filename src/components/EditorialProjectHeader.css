@@ -94,6 +94,21 @@
   transform: translateY(0px); /* Moves it down relative to the default -30px */
 }
 
+/* The logo's GridItem already drops to its own full-width row at <=900px
+   (see GridItem's tablet tier) — the desktop pull-up transform was tuned to
+   tuck it next to the description text beside it, and at this width would
+   instead drag it up into the text stacked above it. Neutralize it here,
+   at a specificity that also overrides the per-project tweaks above. */
+@media (max-width: 900px) {
+  .editorial-header .editorial-header__logo {
+    margin-top: 12px;
+  }
+
+  .editorial-header .editorial-header__logo img {
+    transform: none;
+  }
+}
+
 /* Stacked: swap the vertical rule for a horizontal one between blocks. */
 @media (max-width: 640px) {
   .editorial-header__desc-col {

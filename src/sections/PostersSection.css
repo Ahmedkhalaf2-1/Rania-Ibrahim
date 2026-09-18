@@ -15,3 +15,14 @@
   width: calc(100% + 2 * var(--gutter) + 240px);
   max-width: calc(100% + 2 * var(--gutter) + 240px);
 }
+
+/* On narrow screens the extra 120px/side eats too much of the viewport —
+   fall back to filling just the gutter, same safe breakout InfiniteRail uses. */
+@media (max-width: 700px) {
+  .posters__stack > *:nth-child(4) {
+    margin-left: calc(-1 * var(--gutter));
+    margin-right: calc(-1 * var(--gutter));
+    width: calc(100% + 2 * var(--gutter));
+    max-width: calc(100% + 2 * var(--gutter));
+  }
+}
