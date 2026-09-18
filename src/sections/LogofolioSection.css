@@ -1,0 +1,23 @@
+.logofolio {
+  background: #fdfeff;
+  padding: var(--section-gap-large) 0;
+}
+
+.logofolio__grid {
+  row-gap: var(--section-gap-medium);
+  margin-top: var(--section-gap-medium);
+}
+
+.logofolio__application {
+  margin-top: var(--section-gap-large);
+}
+
+.logofolio__application-label {
+  display: block;
+  margin-bottom: clamp(20px, 3vw, 36px);
+
+  font-size: 13px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--color-neutral-700);
+}

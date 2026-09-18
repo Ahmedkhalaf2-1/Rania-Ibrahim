@@ -1,0 +1,112 @@
+.editorial-header {
+  padding: clamp(20px, 2vw, 28px) 0;
+  /* Nudge the whole header right to align with the composite photo's visible left edge below */
+  margin-left: clamp(44px, 5.5vw, 88px);
+}
+
+/* Rows created by grid auto-placement (logo dropping below on tablet, full
+   stack on mobile) need vertical breathing room — the base grid only
+   defines a column-gap. */
+@media (max-width: 900px) {
+  .editorial-header__grid {
+    row-gap: 20px;
+  }
+}
+
+.editorial-header__title-block {
+  display: grid;
+  gap: 6px;
+}
+
+.editorial-header__title {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: clamp(22px, 2.6vw, 32px);
+  line-height: 1;
+  text-transform: uppercase;
+  color: var(--color-neutral-900);
+}
+
+.editorial-header__subtitle {
+  margin: 0;
+
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-size: clamp(16px, 1.8vw, 22px);
+  line-height: 1.2;
+  color: var(--color-neutral-700);
+}
+
+.editorial-header__desc-col {
+  border-left: 1px solid var(--color-neutral-300);
+  padding-left: clamp(20px, 2.5vw, 36px);
+}
+
+.editorial-header__logo-col {
+  border-left: none;
+  padding-left: 12px;
+}
+
+.editorial-header__description {
+  margin: 0;
+
+  font-family: var(--font-body);
+  font-size: clamp(17px, 1.3vw, 19px);
+  line-height: 1.6;
+  color: #000000;
+}
+
+.editorial-header__logo {
+  width: 100%;
+  min-height: 100px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-top: -22px;
+}
+
+.editorial-header__logo img {
+  object-fit: contain;
+  max-width: 100%;
+  max-height: 180px;
+  transform: translateY(-30px); /* Moves the image up visibly by default */
+}
+
+/* Specific override for Hayat Al-Suqoor: nudge right, font size same as the other projects */
+.editorial-header--hayat-al-suqoor-editorial .editorial-header__desc-col {
+  margin-left: clamp(20px, 3vw, 40px);
+}
+
+.editorial-header--hayat-al-suqoor-editorial .editorial-header__description {
+  max-width: 58ch;
+}
+
+/* Specific override for the second magazine (Tabak Shaaby) because its logo doesn't need to be pushed up as much */
+.editorial-header--tabak-shaaby-editorial .editorial-header__logo img {
+  transform: translateY(-10px); /* Moves it up slightly */
+}
+
+/* Specific override for the third magazine (Alexandria Opera) to pull it down slightly */
+.editorial-header--alexandria-opera-editorial .editorial-header__logo img {
+  transform: translateY(0px); /* Moves it down relative to the default -30px */
+}
+
+/* Stacked: swap the vertical rule for a horizontal one between blocks. */
+@media (max-width: 640px) {
+  .editorial-header__desc-col {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid var(--color-neutral-300);
+    padding-top: 16px;
+  }
+
+  .editorial-header__logo-col {
+    border-left: none;
+    padding-left: 0;
+    border-top: none;
+    padding-top: 16px;
+  }
+}

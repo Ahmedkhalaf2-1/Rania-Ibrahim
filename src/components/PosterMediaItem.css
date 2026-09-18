@@ -1,0 +1,36 @@
+.poster-media-item {
+  width: 100%;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+
+  transform: translateY(0);
+  transition: transform 0.6s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.poster-media-item:hover {
+  transform: translateY(-14px);
+}
+
+/*
+  Dev-only placeholder. Future <img> fills this same frame with
+  width:100%; display:block; aspect-ratio:3/2; object-fit:cover.
+*/
+.poster-media-item__placeholder {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  background: var(--color-neutral-200);
+}
+
+.poster-media-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster-media-item {
+    transition: none;
+  }
+}

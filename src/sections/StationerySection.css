@@ -1,0 +1,475 @@
+.stationery-section {
+  background-color: #FFFFFF;
+  padding: clamp(72px, 9vw, 140px) 0;
+}
+
+/* =========================================
+   MAIN SANAD GUIDELINE COMPOSITION
+   ========================================= */
+.stationery-main-composition {
+  margin-top: clamp(56px, 7vw, 110px);
+  font-family: Arial, Helvetica, sans-serif;
+  color: #111111;
+  align-items: stretch;
+  /* Override PortfolioGrid's align-items: start */
+}
+
+.stationery-label {
+  display: block;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #9A9A9A;
+  margin-bottom: 16px;
+}
+
+/* =========================================
+   GRID CELLS
+   ========================================= */
+.stationery-cell-intro {
+  grid-column: span 4;
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+
+.stationery-cell-patterns {
+  grid-column: span 4;
+  align-self: stretch;
+}
+
+.stationery-cell-patterns--spacer {
+  /* Empty left-side cell to anchor the stationery row */
+  pointer-events: none;
+}
+
+
+.stationery-cell-logo {
+  grid-column: span 8;
+  border-left: 1px solid #E3E3E3;
+  padding-left: clamp(24px, 3vw, 40px);
+  margin-bottom: clamp(24px, 3vw, 40px);
+}
+
+.stationery-cell-typography {
+  grid-column: span 8;
+  border-left: 1px solid #E3E3E3;
+  padding-left: clamp(24px, 3vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+}
+
+.stationery-cell-palette,
+.stationery-cell-stationery {
+  grid-column: 5 / -1;
+  border-left: 1px solid #E3E3E3;
+  padding-left: clamp(24px, 3vw, 40px);
+}
+
+/* Legacy (kept for fallback) */
+.stationery-cell-palette,
+.stationery-cell-stationery {
+  grid-column: 5 / -1;
+  border-left: 1px solid #E3E3E3;
+  padding-left: clamp(24px, 3vw, 40px);
+}
+
+/* =========================================
+   OPERA LOWER ROW — unified right cell
+   ========================================= */
+.stationery-cell-lower-right {
+  grid-column: 5 / -1;
+  border-left: 1px solid #E3E3E3;
+  padding-left: clamp(24px, 3vw, 40px);
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: clamp(20px, 3vw, 40px);
+}
+
+.stationery-lower-palette {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.stationery-lower-stationery {
+  flex: 1 1 0;
+  display: flex;
+  flex-direction: column;
+  border-left: 1px solid #E3E3E3;
+  padding-left: clamp(16px, 2vw, 28px);
+}
+
+/* Vertical palette: 3 cards stacked */
+.stationery-palette__grid--vertical {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 14px);
+  flex: 1;
+}
+
+.stationery-palette__grid--vertical .stationery-color-card {
+  flex: 1;
+  min-height: 0;
+}
+
+/* Vertical stationery: 2 images stacked */
+.stationery-stationery__grid--vertical {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1vw, 14px);
+  flex: 1;
+}
+
+.stationery-stationery__grid--vertical .stationery-stationery-frame {
+  flex: 1;
+  min-height: 0;
+  aspect-ratio: unset;
+}
+
+.stationery-stationery__grid--vertical .stationery-stationery-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+
+.stationery-intro__eyebrow {
+  font-size: clamp(28px, 2.6vw, 36px);
+  line-height: 1.1;
+  color: #111111;
+  margin: 0;
+  font-weight: normal;
+}
+
+.stationery-intro__title {
+  font-size: clamp(42px, 4vw, 56px);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -.01em;
+  color: #111111;
+  margin: 4px 0 16px 0;
+}
+
+.stationery-intro__desc {
+  font-size: 18px;
+  line-height: 1.7;
+  max-width: 340px;
+  color: #111111;
+  margin: 0;
+}
+
+/* =========================================
+   PATTERNS
+   ========================================= */
+.stationery-patterns {
+  height: 100%;
+}
+
+.stationery-patterns__list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(16px, 2vw, 24px);
+}
+
+.stationery-pattern-frame {
+  width: 100%;
+  aspect-ratio: 16 / 11;
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+  background-color: #F5F5F5;
+}
+
+.stationery-pattern-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* =========================================
+   LOGO
+   ========================================= */
+.stationery-logo {
+  height: 100%;
+}
+
+.stationery-logo-frame {
+  width: 30%;
+  min-height: clamp(200px, 22vw, 340px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  margin: 0 auto;
+}
+
+.stationery-logo-frame img {
+  object-fit: contain;
+  display: block;
+
+  /* ↓↓↓ LOGO SIZE — edit this % to resize ↓↓↓ */
+  width: 70%;
+  /* smaller % = smaller logo, bigger % = bigger logo */
+  max-width: none;
+  height: auto;
+}
+
+/* =========================================
+   TYPOGRAPHY
+   ========================================= */
+.stationery-typography {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.stationery-typography-frame {
+  width: 100%;
+  flex-grow: 1;
+  /* Stretches to fill the height to match patterns */
+  min-height: 0;
+  overflow: hidden;
+  border-radius: var(--radius-md, 8px);
+  background-color: #F5F5F5;
+}
+
+.stationery-typography-frame img {
+  width: 100%;
+  height: 100%;
+  /* Fill container completely */
+  display: block;
+  object-fit: cover;
+  /* Touching edges, no empty space */
+  object-position: center;
+  max-width: none;
+  max-height: none;
+  transform: scale(1.18);
+  /* Zoom to crop baked-in white space */
+  transform-origin: center;
+}
+
+/* =========================================
+   DIVIDERS
+   ========================================= */
+.stationery-divider {
+  border: none;
+  border-top: 1px solid #E3E3E3;
+  margin: clamp(28px, 4vw, 52px) 0;
+}
+
+/* =========================================
+   MERCHANDISING
+   ========================================= */
+.stationery-merchandising {
+  margin-top: clamp(48px, 6vw, 80px);
+}
+
+.stationery-merch-item {
+  width: clamp(220px, 22vw, 340px);
+  aspect-ratio: 1 / 1;
+  flex-shrink: 0;
+  filter: drop-shadow(0 6px 10px rgba(0, 0, 0, .12));
+}
+
+.stationery-merch-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+/* =========================================
+   APPLICATIONS
+   ========================================= */
+.stationery-applications-wrapper {
+  margin-top: clamp(48px, 6vw, 80px);
+}
+
+.stationery-applications-wrapper .stationery-divider {
+  margin-top: 0;
+  margin-bottom: clamp(28px, 4vw, 52px);
+}
+
+.stationery-applications {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(12px, 1.5vw, 24px);
+  width: 100%;
+}
+
+.stationery-application-frame {
+  height: clamp(140px, 18vw, 320px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.stationery-application-frame img {
+  width: auto;
+  height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}
+
+.stationery-application-frame:last-child {
+  transform: translateX(-50px) translateY(5px) scale(1.36);
+  /* translateY: negative = up ↑ / positive = down ↓ */
+}
+
+.stationery-application-frame:nth-child(2) {
+  transform: translateX(-15px);
+}
+
+.stationery-application-frame:nth-child(3) {
+  transform: translateX(-5px) scale(1.1);
+}
+
+/* =========================================
+   RESPONSIVE
+   ========================================= */
+@media (max-width: 860px) {
+
+  .stationery-cell-intro,
+  .stationery-cell-patterns,
+  .stationery-cell-logo,
+  .stationery-cell-typography,
+  .stationery-cell-palette,
+  .stationery-cell-stationery,
+  .stationery-cell-lower-right {
+    grid-column: span 12;
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .stationery-cell-logo,
+  .stationery-cell-typography,
+  .stationery-cell-palette,
+  .stationery-cell-stationery,
+  .stationery-cell-lower-right {
+    margin-top: clamp(24px, 4vw, 40px);
+    margin-bottom: clamp(24px, 4vw, 40px);
+  }
+
+  /* Stack palette + stationery vertically on mobile */
+  .stationery-cell-lower-right {
+    flex-direction: column;
+  }
+
+  .stationery-lower-stationery {
+    border-left: none;
+    padding-left: 0;
+    border-top: 1px solid #E3E3E3;
+    padding-top: clamp(16px, 2vw, 28px);
+  }
+
+  .stationery-applications {
+    flex-wrap: wrap;
+  }
+}
+
+@media (max-width: 600px) {
+  .stationery-application-frame {
+    height: clamp(180px, 40vw, 240px);
+  }
+}
+
+/* =========================================
+   SUBSEQUENT PROJECT SPACING
+   ========================================= */
+.stationery-case--subsequent {
+  margin-top: clamp(96px, 12vw, 180px);
+}
+
+.stationery-cell-stationery {
+  margin-top: clamp(28px, 3.5vw, 48px);
+}
+
+/* =========================================
+   COLOR PALETTE
+   ========================================= */
+.stationery-cell-palette {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.stationery-palette__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--grid-gap, 24px);
+  flex: 1 1 auto;
+  height: 100%;
+}
+
+.stationery-color-card {
+  border-radius: var(--radius-md, 8px);
+  padding: clamp(14px, 1.5vw, 20px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  /* Stretch to fill the full column height, matching the pattern block */
+  height: 100%;
+  min-height: 0;
+}
+
+.stationery-color-card--bordered {
+  border: 1px solid #E3E3E3;
+}
+
+.stationery-color-card__name {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.stationery-color-card__values {
+  font-size: 11px;
+  line-height: 1.5;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* =========================================
+   STATIONERY BLOCK (RIGHT COLUMN)
+   ========================================= */
+.stationery-stationery__grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--grid-gap, 24px);
+}
+
+.stationery-stationery-frame {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+  background-color: #F5F5F5;
+  /* Temporary placeholder color */
+}
+
+.stationery-stationery-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+/* Responsive updates for newly added sections */
+@media (max-width: 640px) {
+  .stationery-palette__grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .stationery-stationery__grid {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+}

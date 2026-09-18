@@ -1,0 +1,39 @@
+.grid-item {
+  grid-column: span var(--grid-item-span) / span var(--grid-item-span);
+  min-width: 0;
+}
+
+/* Tiers are listed narrowest-last so, at any width where more than one
+   query matches, the narrowest one's rule wins outright (normal CSS
+   cascade). Each tier falls back through the wider ones when its own
+   var is unset, so a two-tier caller (span + mobileSpan) still collapses
+   correctly at 560px even though it never set --grid-item-span-phone. */
+
+@media (max-width: 900px) {
+  .grid-item {
+    grid-column: span var(--grid-item-span-tablet, var(--grid-item-span)) / span
+      var(--grid-item-span-tablet, var(--grid-item-span));
+  }
+}
+
+@media (max-width: 860px) {
+  .grid-item {
+    grid-column: span var(--grid-item-span-mobile, var(--grid-item-span-tablet, var(--grid-item-span)))
+      / span var(--grid-item-span-mobile, var(--grid-item-span-tablet, var(--grid-item-span)));
+  }
+}
+
+@media (max-width: 560px) {
+  .grid-item {
+    grid-column: span
+      var(
+        --grid-item-span-phone,
+        var(--grid-item-span-mobile, var(--grid-item-span-tablet, var(--grid-item-span)))
+      )
+      / span
+      var(
+        --grid-item-span-phone,
+        var(--grid-item-span-mobile, var(--grid-item-span-tablet, var(--grid-item-span)))
+      );
+  }
+}

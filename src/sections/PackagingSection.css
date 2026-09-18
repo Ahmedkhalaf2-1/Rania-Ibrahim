@@ -1,0 +1,124 @@
+.packaging {
+  background: var(--color-neutral-100);
+  padding: var(--section-gap-large) 0;
+}
+
+/* Left column */
+
+.packaging .case-study {
+  align-items: stretch;
+}
+
+.packaging .case-study__col {
+  height: 100%;
+}
+
+.packaging__intro-grid {
+  margin-top: clamp(20px, 2.5vw, 32px);
+}
+
+.packaging__intro {
+  margin: 0;
+  max-width: 78ch;
+
+  font-size: clamp(19px, 2vw, 24px);
+  line-height: 1.6;
+  color: var(--color-neutral-800);
+}
+
+.packaging-left-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(10px, 1.4vw, 16px);
+  row-gap: clamp(24px, 3vw, 40px);
+  height: 100%;
+  grid-template-rows: auto 1fr;
+}
+
+.packaging-swatch {
+  display: grid;
+  gap: 8px;
+  width: 100%;
+}
+
+.packaging-swatch__color {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-md);
+}
+
+.packaging-swatch__caption {
+  font-size: 12px;
+  color: var(--color-accent-2-800);
+}
+
+.packaging-dieline-cell {
+  grid-column: 1 / -1;
+  width: 100%;
+  display: flex;
+}
+
+.packaging-dieline-cell .media-frame {
+  width: 100%;
+  height: 100%;
+  border-radius: var(--radius-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.packaging-dieline-cell .media-frame__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+/* Right column */
+
+.packaging-hero {
+  background: #d9d9d9;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  height: 100%;
+  width: 100%;
+}
+
+/* Packaging Design label + rail */
+
+.packaging__rail-block {
+  margin-top: var(--section-gap-medium);
+}
+
+.packaging__label {
+  display: block;
+  margin-bottom: clamp(20px, 3vw, 36px);
+
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-accent-2-600);
+}
+
+.packaging-rail__item {
+  width: min(70vw, 900px);
+  flex-shrink: 0;
+}
+
+/* Extra Mockups */
+
+.packaging__extra-heading {
+  margin: var(--section-gap-large) 0 0;
+
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: clamp(36px, 5vw, 72px);
+  line-height: 1;
+  color: var(--color-neutral-900);
+}
+
+.packaging__extra-grid {
+  margin-top: clamp(24px, 3vw, 40px);
+  row-gap: var(--media-gap);
+}

@@ -1,0 +1,25 @@
+.phone-frame {
+  width: clamp(112px, 11vw, 164px);
+  aspect-ratio: 9 / 19.5;
+  flex-shrink: 0;
+
+  border-radius: 26px;
+  background: var(--color-neutral-900);
+  padding: 7px;
+  box-shadow: var(--shadow-md);
+}
+
+.phone-frame__screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  overflow: hidden;
+  background: var(--color-neutral-700);
+}
+
+.phone-frame__img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}

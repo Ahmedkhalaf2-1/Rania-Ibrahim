@@ -1,0 +1,38 @@
+.landmark-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.landmark-item__icon-frame {
+  width: 100%;
+  height: clamp(110px, 11vw, 170px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.landmark-item__icon-frame img {
+  max-width: 90%;
+  max-height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+
+
+.landmark-item__photo-frame {
+  width: 100%;
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+  background-color: #F0F0F0; /* Temporary placeholder */
+}
+
+.landmark-item__photo-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+  display: block;
+}

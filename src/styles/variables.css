@@ -1,0 +1,63 @@
+/*
+  Design tokens for the portfolio.
+  Centralized here so component CSS never hardcodes raw color/spacing values.
+
+  NOTE: exact brand hex values from the original portfolio were not available
+  in the provided source material. These are best-effort editorial
+  warm-cream / dark-olive / burnt-orange values matched to the written
+  visual reference (see final report). Update here only — nothing else
+  needs to change if these are corrected later.
+*/
+
+:root {
+  /* Typography */
+  --font-heading: 'Caprasimo', serif;
+  --font-heading-weight: 400;
+  --font-body: 'Figtree', sans-serif;
+
+  /* Base */
+  --color-bg: #f6efe4;
+  --color-text: #201c16;
+
+  /* Neutrals */
+  --color-neutral-100: #f4f4f1;
+  --color-neutral-200: #e9e1d2;
+  --color-neutral-300: #a49d8a;
+  --color-neutral-500: #8d8672;
+  --color-neutral-600: #726c5c;
+  --color-neutral-700: #4c473b;
+  --color-neutral-800: #2b271f;
+  --color-neutral-900: #1a1712;
+
+  /* Accent — burnt orange (hero year, primary CTA, link hover) */
+  --color-accent-500: #e07a3f;
+  --color-accent-600: #cc6529;
+  --color-accent-700: #a8541f;
+
+  /* Accent 2 — dark olive (marquee bg, eyebrow, marquee text) */
+  --color-accent-2-100: #f5efe0;
+  --color-accent-2-300: #d7c99f;
+  --color-accent-2-600: #6e6b38;
+  --color-accent-2-700: #565a2f;
+  --color-accent-2-800: #33351c;
+
+  --color-divider: #ddd2bb;
+
+  --radius-lg: 24px;
+  --radius-md: 16px;
+
+  --shadow-md: 0 14px 28px -10px rgba(20, 16, 12, 0.4);
+
+  /*
+    Master portfolio grid — every section's PortfolioGrid/GridItem usage
+    shares this single gap, and all section-level vertical spacing pulls
+    from these same four rhythm tokens instead of one-off clamp() values.
+  */
+  --gutter: clamp(20px, 5vw, 88px);
+  --grid-gap: clamp(20px, 2.4vw, 32px);
+
+  --section-gap-small: clamp(48px, 6vw, 96px);
+  --section-gap-medium: clamp(56px, 7vw, 110px);
+  --section-gap-large: clamp(72px, 9vw, 140px);
+  --media-gap: clamp(32px, 4vw, 64px);
+}

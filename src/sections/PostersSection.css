@@ -1,0 +1,17 @@
+.posters {
+  background: var(--color-bg);
+  padding: var(--section-gap-large) 0 var(--section-gap-medium);
+}
+
+.posters__stack {
+  margin-top: var(--section-gap-small);
+  row-gap: var(--media-gap);
+}
+
+/* 4th poster only: break out of the container gutters to read wider than the rest */
+.posters__stack > *:nth-child(4) {
+  margin-left: calc(-1 * var(--gutter) - 120px);
+  margin-right: calc(-1 * var(--gutter) - 120px);
+  width: calc(100% + 2 * var(--gutter) + 240px);
+  max-width: calc(100% + 2 * var(--gutter) + 240px);
+}

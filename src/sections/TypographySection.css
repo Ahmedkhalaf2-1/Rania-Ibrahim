@@ -1,0 +1,8 @@
+.typography {
+  padding: var(--section-gap-large) 0;
+}
+
+.typography__grid {
+  margin-top: var(--section-gap-medium);
+  row-gap: var(--section-gap-medium);
+}

@@ -1,0 +1,34 @@
+/* Full-bleed to the viewport edges, clipped so it can never cause page-level horizontal scroll. */
+.infinite-rail {
+  margin-left: calc(-1 * var(--gutter));
+  margin-right: calc(-1 * var(--gutter));
+  width: calc(100% + 2 * var(--gutter));
+
+  overflow: hidden;
+}
+
+.infinite-rail__track {
+  display: flex;
+  align-items: center;
+  width: max-content;
+
+  animation-name: infinite-rail-scroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes infinite-rail-scroll {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(var(--rail-distance, -50%), 0, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .infinite-rail__track {
+    animation: none;
+    transform: none;
+  }
+}

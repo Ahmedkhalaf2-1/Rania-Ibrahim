@@ -1,0 +1,7 @@
+.portfolio-container {
+  width: 100%;
+  box-sizing: border-box;
+
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}

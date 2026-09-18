@@ -1,0 +1,5 @@
+.case-study__col {
+  display: grid;
+  gap: clamp(24px, 3vw, 40px);
+  min-width: 0;
+}

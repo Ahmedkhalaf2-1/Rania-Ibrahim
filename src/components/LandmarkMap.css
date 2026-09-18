@@ -1,0 +1,19 @@
+.landmark-map {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background-color: #F8F8F8; /* Pale neutral background placeholder */
+}
+
+.landmark-map img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  max-height: none;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  /* Zoom to crop the baked-in white margin in the source artwork */
+  transform: scale(1.27);
+  transform-origin: center;
+}

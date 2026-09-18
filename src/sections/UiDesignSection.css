@@ -1,0 +1,94 @@
+.ui-design {
+  background: var(--color-neutral-100);
+  padding: var(--section-gap-large) 0;
+}
+
+/* Shared micro-label used for every spec/media block heading in this section. */
+.ui-label {
+  display: block;
+  margin-bottom: 12px;
+
+  font-size: 12px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--color-neutral-600);
+}
+
+.ui-divider {
+  border-top: 1px solid var(--color-divider);
+}
+
+.case-study__intro {
+  display: grid;
+  gap: 10px;
+}
+
+.case-study__title {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1.05;
+  color: var(--color-neutral-900);
+}
+
+.case-study__eyebrow {
+  margin: 0 0 4px;
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+}
+
+.case-study__body {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.7;
+  color: var(--color-neutral-800);
+}
+
+.case-study__specs {
+  display: grid;
+}
+
+.case-study__palette {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 2vw, 28px);
+}
+
+/* Sanad palette — big full-color cards, same style/size as the Opera
+   stationery (4) COLOR PALETTE cards, instead of small circle swatches. */
+.ui-design__palette-grid {
+  display: flex;
+  gap: 14px;
+}
+
+.ui-design__color-card {
+  flex: 1;
+  aspect-ratio: 3 / 4;
+  border-radius: 12px;
+  padding: 16px;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: flex-end;
+}
+
+.ui-design__color-card--bordered {
+  border: 1px solid var(--color-neutral-300);
+}
+
+.ui-design__color-card__hex {
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.ui-design__rail-block {
+  margin-top: var(--section-gap-small);
+}
+
+.ui-design__divider {
+  border-top: 1px solid var(--color-divider);
+  margin-top: var(--section-gap-medium);
+}
