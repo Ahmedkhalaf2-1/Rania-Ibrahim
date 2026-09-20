@@ -7,7 +7,7 @@ import MockupCard, { type MockupItem } from '../components/MockupCard'
 import Reveal from '../components/Reveal'
 import './LogofolioSection.css'
 
-const imageModules = import.meta.glob('../assets/logo/*.jpeg', { eager: true, query: '?url', import: 'default' })
+const imageModules = import.meta.glob('../assets/logo/*.webp', { eager: true, query: '?url', import: 'default' })
 const LOGO_IMAGES = Object.keys(imageModules)
   .sort()
   .map(key => imageModules[key] as string)
