@@ -11,7 +11,6 @@ interface RevealProps {
 /**
  * Wraps content in an IntersectionObserver-driven reveal.
  * Starts hidden/offset, animates to visible once the element enters the viewport.
- * Respects prefers-reduced-motion via CSS (see Reveal.css).
  */
 function Reveal({ children, delay = 0, className = '' }: RevealProps) {
   const ref = useRef<HTMLDivElement | null>(null)

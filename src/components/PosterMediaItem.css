@@ -28,9 +28,3 @@
   display: block;
   object-fit: contain;
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .poster-media-item {
-    transition: none;
-  }
-}

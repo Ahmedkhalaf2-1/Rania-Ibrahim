@@ -25,10 +25,3 @@
     transform: translate3d(var(--rail-distance, -50%), 0, 0);
   }
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .infinite-rail__track {
-    animation: none;
-    transform: none;
-  }
-}

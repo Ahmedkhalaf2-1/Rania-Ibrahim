@@ -48,9 +48,3 @@
   height: 42%;
   background: var(--color-neutral-100);
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .logo-tile__frame {
-    transition: none;
-  }
-}

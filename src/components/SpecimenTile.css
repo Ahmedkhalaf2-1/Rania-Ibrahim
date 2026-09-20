@@ -32,9 +32,3 @@
 .specimen-tile:hover .specimen-tile__img {
   transform: scale(1.05);
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .specimen-tile__img {
-    transition: none;
-  }
-}
