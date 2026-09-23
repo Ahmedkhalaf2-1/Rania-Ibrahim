@@ -41,7 +41,3 @@
   font-size: clamp(28px, 5vw, 76px);
   color: var(--color-accent-500);
 }
-
-.hero__cta {
-  margin-top: clamp(24px, 3.5vw, 44px);
-}

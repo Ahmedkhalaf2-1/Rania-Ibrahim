@@ -89,6 +89,13 @@ function AboutSection() {
             <Button href="#contact" variant="secondary">
               Get in touch
             </Button>
+            <Button
+              href={`${import.meta.env.BASE_URL}Rania-Abdullah-CV.pdf`}
+              variant="secondary"
+              download="Rania-Abdullah-CV.pdf"
+            >
+              Download CV
+            </Button>
           </Reveal>
         </div>
       </div>
