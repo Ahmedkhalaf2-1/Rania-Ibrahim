@@ -11,6 +11,7 @@ import MagazinesSection from './sections/MagazinesSection'
 
 import StationerySection from './sections/StationerySection'
 import LandmarksSection from './sections/LandmarksSection'
+import SiteFooter from './components/SiteFooter'
 
 const GREETINGS = ['HELLO', 'BONJOUR', 'السلام عليكم', 'CIAO']
 const SKILL_WORDS = [
@@ -24,7 +25,7 @@ const SKILL_WORDS = [
   'STATIONERY',
 ]
 
-// Page 1 + Sections 01–08.
+// Page 1 + Sections 01–08 + footer.
 function App() {
   return (
     <>
@@ -41,6 +42,7 @@ function App() {
       <TypographySection />
       <MagazinesSection />
       <LandmarksSection />
+      <SiteFooter />
     </>
   )
 }

@@ -22,7 +22,7 @@ const EDUCATION = [
   'Alexandria University.',
   'Graduated 2026, Very Good with Honors.',
 ]
-const SOFTWARE = ['Illustrator,', 'Photoshop,', 'InDesign,', 'After Effects,', 'Figma.']
+const SOFTWARE = ['Illustrator,', 'Photoshop,', 'InDesign,', 'Figma.']
 
 function AboutSection() {
   return (

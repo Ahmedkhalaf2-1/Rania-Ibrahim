@@ -1,0 +1,118 @@
+/* Dark olive band — same ground as the marquees, so the page closes on its
+   own palette. */
+.site-footer {
+  background: var(--color-accent-2-800);
+  color: var(--color-accent-2-100);
+
+  padding: var(--section-gap-large) var(--gutter) clamp(24px, 3vw, 40px);
+}
+
+.site-footer__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-gap-small);
+}
+
+.site-footer__eyebrow {
+  display: block;
+  margin-bottom: clamp(14px, 2vw, 24px);
+
+  font-size: 13px;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--color-accent-2-300);
+}
+
+.site-footer__headline {
+  margin: 0;
+
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: clamp(44px, 9vw, 150px);
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+  color: var(--color-accent-2-100);
+}
+
+.site-footer__headline em {
+  font-style: normal;
+  color: var(--color-accent-500);
+}
+
+.site-footer__contacts {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(24px, 4vw, 64px);
+}
+
+.site-footer__contacts li {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.site-footer__contact-label {
+  font-size: 12px;
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+  color: var(--color-accent-2-300);
+}
+
+.site-footer__contact-value {
+  font-size: clamp(17px, 1.6vw, 22px);
+  color: var(--color-accent-2-100);
+  overflow-wrap: anywhere;
+}
+
+.site-footer__contact-value:hover {
+  color: var(--color-accent-500);
+}
+
+.site-footer__bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 32px;
+
+  padding-top: clamp(20px, 2.4vw, 32px);
+  border-top: 1px solid color-mix(in srgb, var(--color-accent-2-300) 30%, transparent);
+}
+
+.site-footer__name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+}
+
+.site-footer__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(16px, 3vw, 40px);
+}
+
+.site-footer__link {
+  font-size: 13px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-accent-2-300);
+}
+
+.site-footer__link:hover {
+  color: var(--color-accent-500);
+}
+
+.site-footer__copy {
+  font-size: 13px;
+  color: var(--color-accent-2-300);
+}
+
+@media (max-width: 560px) {
+  .site-footer__bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -91,35 +91,22 @@ function LandmarksSection() {
           </div>
         </Reveal>
 
-        <div className="landmarks-grid-container">
-          <PortfolioGrid className="landmarks-grid">
-            {landmarks.map((landmark, index) => {
-              // 3 items per row on desktop, calculate stagger delay based on column position (0, 1, 2)
-              const colIndex = index % 3
-              const delay = `${colIndex * 0.06}s`
+        {/* Photos (3 × 2) on the left, the large map beside them on the right. */}
+        <div className="landmarks-showcase">
+          <div className="landmarks-showcase__photos">
+            {landmarks.map((landmark, index) => (
+              <Reveal key={landmark.id} delay={(index % 3) * 60}>
+                <LandmarkItem
+                  nameAr={landmark.nameAr}
+                  icon={landmark.icon}
+                  photo={landmark.photo}
+                />
+              </Reveal>
+            ))}
+          </div>
 
-              return (
-                <div key={landmark.id} className="landmarks-grid-item">
-                  <Reveal delay={delay}>
-                    <LandmarkItem
-                      nameAr={landmark.nameAr}
-                      icon={landmark.icon}
-                      photo={landmark.photo}
-                    />
-                  </Reveal>
-                </div>
-              )
-            })}
-          </PortfolioGrid>
-        </div>
-
-        <div className="landmarks-map-container">
-          <Reveal>
-            <PortfolioGrid>
-              <div className="landmarks-map-wrapper">
-                <LandmarkMap imageSrc={landmarkMapImage} />
-              </div>
-            </PortfolioGrid>
+          <Reveal className="landmarks-showcase__map" delay={120}>
+            <LandmarkMap imageSrc={landmarkMapImage} />
           </Reveal>
         </div>
       </PortfolioContainer>

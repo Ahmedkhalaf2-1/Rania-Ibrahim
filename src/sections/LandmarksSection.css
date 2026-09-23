@@ -23,41 +23,75 @@
   margin-top: clamp(24px, 3vw, 40px);
 }
 
-.landmarks-grid-container {
-  margin-top: clamp(24px, 3vw, 40px);
+/* Photos left, map right. The 1 : 1.8 split makes the 16:9 map and the
+   3 × 2 grid of portrait photos come out the same height; stretch absorbs
+   what's left (gaps), with the map image covering its box. */
+.landmarks-showcase {
+  margin-top: clamp(32px, 4vw, 56px);
+
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.8fr);
+  gap: var(--grid-gap);
+  align-items: stretch;
 }
 
-.landmarks-grid {
-  row-gap: clamp(24px, 3vw, 48px);
+.landmarks-showcase__photos {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 1.2vw, 18px);
 }
 
-.landmarks-grid-item {
-  grid-column: span 4;
+/* The photos are portrait artwork: frame them at their own ratio so no
+   letterbox bars show, and drop the empty icon slot above each one. */
+.landmarks-showcase .landmark-item__photo-frame {
+  aspect-ratio: 243 / 388;
 }
 
-.landmarks-map-container {
-  margin-top: clamp(96px, 10vw, 160px);
+.landmarks-showcase .landmark-item__icon-frame:empty {
+  display: none;
 }
 
-.landmarks-map-wrapper {
-  grid-column: 1 / 13; /* Full container width */
+.landmarks-showcase__map {
+  min-width: 0;
+}
+
+.landmarks-showcase__map,
+.landmarks-showcase__map .landmark-map {
+  height: 100%;
+}
+
+/* The photo grid alone sets the row height: the map image is taken out of
+   flow so its intrinsic height can't stretch the row. */
+.landmarks-showcase__map .landmark-map {
+  position: relative;
+  aspect-ratio: auto;
+}
+
+.landmarks-showcase__map .landmark-map img {
+  position: absolute;
+  inset: 0;
 }
 
 /* =========================================
    RESPONSIVE
    ========================================= */
 @media (max-width: 900px) {
-  .landmarks-grid-item {
-    grid-column: span 6; /* 2 items per row */
+  /* Stack: map on top at full width, photos underneath. */
+  .landmarks-showcase {
+    grid-template-columns: minmax(0, 1fr);
   }
 
-  .landmarks-map-wrapper {
-    grid-column: 1 / 13; /* Full container width */
+  .landmarks-showcase__map {
+    order: -1;
+  }
+
+  .landmarks-showcase__map .landmark-map {
+    aspect-ratio: 16 / 9;
   }
 }
 
-@media (max-width: 600px) {
-  .landmarks-grid-item {
-    grid-column: span 12; /* 1 item per row */
+@media (max-width: 560px) {
+  .landmarks-showcase__photos {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
