@@ -10,7 +10,6 @@ interface ContactLink {
 /** Contact channels shown in the footer; the list is hidden while empty. */
 const CONTACT_LINKS: ContactLink[] = [
   { label: 'Email', value: 'Rania.abdalla.ca@gmail.com', href: 'mailto:Rania.abdalla.ca@gmail.com' },
-  { label: 'Phone', value: '01010278009', href: 'tel:+201010278009' },
 ]
 
 const NAV_LINKS = [
