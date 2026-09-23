@@ -3,19 +3,25 @@ import PortfolioContainer from '../components/PortfolioContainer'
 import PortfolioGrid from '../components/PortfolioGrid'
 import GridItem from '../components/GridItem'
 import LogoTile, { type LogoItem } from '../components/LogoTile'
+import DynamicLogoTile from '../components/DynamicLogoTile'
 import MockupCard, { type MockupItem } from '../components/MockupCard'
 import Reveal from '../components/Reveal'
 import './LogofolioSection.css'
 
-const imageModules = import.meta.glob('../assets/logo/*.webp', { eager: true, query: '?url', import: 'default' })
+const imageModules = import.meta.glob('../assets/logo/*.png', { eager: true, query: '?url', import: 'default' })
 const LOGO_IMAGES = Object.keys(imageModules)
   .sort()
   .map(key => imageModules[key] as string)
 
-const LOGO_ITEMS: LogoItem[] = Array.from({ length: 18 }, (_, i) => ({
+const LOGO_ITEMS: LogoItem[] = LOGO_IMAGES.map((image, i) => ({
   index: i + 1,
-  image: LOGO_IMAGES[i]
+  image
 }))
+
+/** Logo 1 stays fixed; logos 2–7 share one rotating slot; the rest are static. */
+const PRIMARY_LOGO = LOGO_ITEMS[0]
+const DYNAMIC_LOGOS = LOGO_ITEMS.slice(1, 7)
+const STATIC_LOGOS = LOGO_ITEMS.slice(7)
 
 const mockupModules = import.meta.glob('../assets/mockups/*.{jpeg,jpg,png,webp}', { eager: true, query: '?url', import: 'default' })
 const MOCKUP_IMAGES = Object.keys(mockupModules)
@@ -43,9 +49,19 @@ function LogofolioSection() {
 
         {/* 3 logo tiles per row, each spanning 4 of the shared 12 columns. */}
         <PortfolioGrid className="logofolio__grid">
-          {LOGO_ITEMS.map((item, i) => (
+          <GridItem span={4}>
+            <Reveal delay={staggerDelay(0)}>
+              <LogoTile item={PRIMARY_LOGO} label="Primary Logo" />
+            </Reveal>
+          </GridItem>
+          <GridItem span={4}>
+            <Reveal delay={staggerDelay(1)}>
+              <DynamicLogoTile items={DYNAMIC_LOGOS} />
+            </Reveal>
+          </GridItem>
+          {STATIC_LOGOS.map((item, i) => (
             <GridItem key={item.index} span={4}>
-              <Reveal delay={staggerDelay(i)}>
+              <Reveal delay={staggerDelay(i + 2)}>
                 <LogoTile item={item} />
               </Reveal>
             </GridItem>

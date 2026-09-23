@@ -1,0 +1,22 @@
+/* Same frame size as .logo-tile__frame; logos stack inside it. */
+.dynamic-logo__frame {
+  position: relative;
+}
+
+.dynamic-logo__frame .dynamic-logo__img {
+  /* Centered in the frame; sized by the shared .logo-tile__frame img rule. */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.97);
+  transition:
+    opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.7s cubic-bezier(0.22, 0.7, 0.2, 1);
+}
+
+.dynamic-logo__frame .dynamic-logo__img.is-active {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}

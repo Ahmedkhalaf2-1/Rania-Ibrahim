@@ -28,9 +28,19 @@
   transition: transform 0.5s cubic-bezier(0.22, 0.7, 0.2, 1);
 }
 
+/*
+  Equal visual area for every logo: --logo-size is the side of a square of
+  the target area, and --logo-sqrt-ratio (set by LogoImage) trades width for
+  height by the logo's aspect ratio. Max bounds + contain keep it inside the
+  frame without distortion.
+*/
 .logo-tile__frame img {
-  width: 100%;
-  height: 100%;
+  --logo-size: clamp(100px, 10.5vw, 145px);
+
+  width: calc(var(--logo-size) * var(--logo-sqrt-ratio, 1));
+  height: calc(var(--logo-size) / var(--logo-sqrt-ratio, 1));
+  max-width: 100%;
+  max-height: 100%;
   object-fit: contain;
 }
 
@@ -47,4 +57,27 @@
   width: 42%;
   height: 42%;
   background: var(--color-neutral-100);
+}
+
+/*
+  Named tiles (Primary / Dynamic Logo): label sits above the frame so the
+  frame spans the full column and both named tiles render at the same size.
+*/
+.logo-tile--labeled {
+  flex-direction: column;
+  gap: 10px;
+}
+
+.logo-tile--labeled .logo-tile__index {
+  padding-top: 0;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+/* flex:none so the fixed height applies in the column layout; with flex:1
+   the frame sizes to its content, and the dynamic tile's stacked (absolute)
+   logos have none, collapsing it to zero height. */
+.logo-tile--labeled .logo-tile__frame {
+  flex: none;
+  width: 100%;
 }
