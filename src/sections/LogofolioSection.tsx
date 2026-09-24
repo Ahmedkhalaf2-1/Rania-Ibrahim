@@ -18,10 +18,12 @@ const LOGO_ITEMS: LogoItem[] = LOGO_IMAGES.map((image, i) => ({
   image
 }))
 
-/** Logo 1 stays fixed; logos 2–7 share one rotating slot; the rest are static. */
+/** Logo 1 stays fixed; logos 2–7 share one rotating slot; the rest are static.
+ *  Primary and Dynamic count as slots 1 and 2, so the static tiles are
+ *  numbered from 3. */
 const PRIMARY_LOGO = LOGO_ITEMS[0]
 const DYNAMIC_LOGOS = LOGO_ITEMS.slice(1, 7)
-const STATIC_LOGOS = LOGO_ITEMS.slice(7)
+const STATIC_LOGOS = LOGO_ITEMS.slice(7).map((item, i) => ({ ...item, index: i + 3 }))
 
 const mockupModules = import.meta.glob('../assets/mockups/*.{jpeg,jpg,png,webp}', { eager: true, query: '?url', import: 'default' })
 const MOCKUP_IMAGES = Object.keys(mockupModules)
